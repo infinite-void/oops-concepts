@@ -1,15 +1,17 @@
 #include <iostream>
 #include <cmath>
-
+//'this' is a pointer in cpp
+//'this' points to the specific class instance inside which it is called.
 class ComplexNumber {
     public:
         int real, imag;
 
         void Print() {
             if(imag > -1)
-                std::cout << real << " +" << imag << "i" << std::endl;
+                std::cout << this->real << " +" << this->imag << "i" << std::endl;
             else 
                 std::cout << real << " " << imag << "i" << std::endl;
+            
         }
 
         void PrintConjugate() {
@@ -22,6 +24,8 @@ class ComplexNumber {
 
         void ApplyConjugate() {
             imag = -1 * imag;
+
+            this->Print();
         }
 
         double Magnitude() {
@@ -31,17 +35,29 @@ class ComplexNumber {
 
 };
 
-int main(int argc, char* argv[]) {
-    ComplexNumber a;
-    a.real = 2;
-    a.imag = 3;
-    a.Print();
-    a.PrintConjugate();
-    std::cout << "CONJUGATE" << std::endl;
-    a.ApplyConjugate();
-    a.Print();
-    a.PrintConjugate();
 
-    std::cout << a.Magnitude() << std::endl;
+
+int main(int argc, char* argv[]) {
+    ComplexNumber* a = nullptr;
+    ComplexNumber* b = nullptr;
+
+    a = new ComplexNumber();
+    b = new ComplexNumber();
+
+    if(!a) {
+        std::cerr << "ERROR: Error in get a class instance" << std::endl;
+        return -1;
+    }
+
+    if(!b) {
+        std::cerr << "ERROR: Error in get a class instance" << std::endl;
+        return -1;
+    }
+    a->real = 2;
+    a->imag = 3;
+    a->ApplyConjugate();
+   
+
+    //std::cout << a->Magnitude() << std::endl;
     return 0;
 }
