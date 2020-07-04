@@ -6,10 +6,11 @@ class String {
 
     public:
         String(const char* b) {
-            a = new char[sizeof(b) + 1];
+            std::cout<<sizeof(b) ;
+            a = new char[strlen(b) + 1];
 
-            memcpy(a, b, sizeof(b));
-            a[sizeof(b)] = '\0';
+            memcpy(a, b, strlen(b));
+            a[strlen(b)] = '\0';
         }
         void print() {
             std::cout << a << std::endl;
@@ -30,9 +31,9 @@ std::ostream& operator<<(std::ostream& stream,  const String& str) {
 }
 
 int main() {
-    String str("hello");
+    String str("heltukyiljkmlmlo");
     std::cout << str << std::endl; 
-    std::cout << str[1] << std::endl;
+    std::cout << str[10] << std::endl;
 
     //stdout
     //stdin
