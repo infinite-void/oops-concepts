@@ -6,7 +6,6 @@ class String {
 
     public:
         String(const char* b) {
-            std::cout<<sizeof(b) ;
             a = new char[strlen(b) + 1];
 
             memcpy(a, b, strlen(b));
