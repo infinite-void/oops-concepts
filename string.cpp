@@ -7,7 +7,7 @@ class String {
     public:
         String(const char* b) {
             a = new char[strlen(b) + 1];
-
+           
             memcpy(a, b, strlen(b));
             a[strlen(b)] = '\0';
         }

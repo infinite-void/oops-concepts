@@ -18,9 +18,8 @@ class Derived : public Base {
 int main() {
     
     Derived der;
-   
-    std::cout << der.b << " " << der.a << " " << der.Base::a << std::endl;
     Base base;
+    std::cout << der.b << " " << der.a << " " << der.Base::a << std::endl;
     std::cout << base.a << std::endl;
     std::cout << sizeof(base) << " " << sizeof(der) <<std::endl;
     return 0;
