@@ -1,5 +1,5 @@
 #include <iostream>
-
+using namespace std;
 class Animals {
     public:
         virtual void Print() {
@@ -22,7 +22,7 @@ void function(Animals* p) {
 }
 
 int main(int args, char* argv[]) {
-    
+    using namespace std;
     Animals* p = new Endangered();
     Animals* q = new Extinct();
     function(p);

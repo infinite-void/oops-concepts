@@ -22,6 +22,7 @@ void printType(Gadget* obj) {
     if(obj->getType() == 1) 
         std::cout << "it is a mechanical gadget" << std::endl;
     else 
+    
         std::cout << "it is a electronic gadget" << std::endl;
 }
 
